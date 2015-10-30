@@ -8588,13 +8588,13 @@ Source: Comchip CGRM4001-G.pdf</description>
 <attribute name="OC_NEWARK" value="unknown"/>
 </part>
 <part name="U$1" library="jet-lib" deviceset="ARDUINONANO" device=""/>
-<part name="U$2" library="SparkFun" deviceset="TRANSISTOR_NPN" device="SOT23" value="heater"/>
+<part name="HEATER_MOSFET" library="SparkFun" deviceset="TRANSISTOR_NPN" device="SOT23" value="SI2302CDS-T1-E3"/>
 <part name="R7" library="adafruit" deviceset="R-US_" device="R0805" value="10k"/>
 <part name="R9" library="adafruit" deviceset="R-US_" device="R0805" value="10k"/>
 <part name="R10" library="adafruit" deviceset="R-US_" device="R0805" value="10k"/>
 <part name="DS18B20" library="SparkFun" deviceset="M03" device="LONGPADS"/>
 <part name="BUTTONS" library="SparkFun" deviceset="M05" device="LOCK"/>
-<part name="U$3" library="SparkFun" deviceset="TRANSISTOR_NPN" device="SOT23" value="buzzer"/>
+<part name="BUZZER_MOSFET" library="SparkFun" deviceset="TRANSISTOR_NPN" device="SOT23" value="SI2302CDS-T1-E3"/>
 <part name="HEATER_LED" library="SparkFun" deviceset="M02" device="LOCK"/>
 <part name="PUMP_LED" library="SparkFun" deviceset="M02" device="LOCK"/>
 <part name="HEATER" library="SparkFun" deviceset="M02" device="3.5MM-NO_SILK"/>
@@ -8603,9 +8603,9 @@ Source: Comchip CGRM4001-G.pdf</description>
 <part name="POWER" library="SparkFun" deviceset="M02" device="3.5MM-NO_SILK"/>
 <part name="GND14" library="supply1" deviceset="GND" device=""/>
 <part name="C4" library="rcl" deviceset="C-US" device="C0805" value="0.47uf"/>
-<part name="IC2" library="national-semiconductor" deviceset="LM2936MP?*" device="" technology="-5.0" value="LM2940"/>
+<part name="IC2" library="national-semiconductor" deviceset="LM2936MP?*" device="" technology="-5.0" value="LM2940IMP-5.0/NOPB"/>
 <part name="C1" library="rcl" deviceset="C-US" device="C0805" value="22uf"/>
-<part name="U$4" library="dpak" deviceset="BUK9275-100A" device="" value="GOVPRESS"/>
+<part name="PUMP_MOSFET" library="dpak" deviceset="BUK9275-100A" device="" value="BUK9275-100A"/>
 </parts>
 <sheets>
 <sheet>
@@ -8630,6 +8630,10 @@ Source: Comchip CGRM4001-G.pdf</description>
 <text x="-1.778" y="80.01" size="1.778" layer="97" rot="R90">a5</text>
 <text x="-6.858" y="80.01" size="1.778" layer="97" rot="R90">a6</text>
 <text x="-11.938" y="79.756" size="1.778" layer="97" rot="R90">a7</text>
+<text x="177.8" y="112.268" size="1.778" layer="97" rot="R90">up</text>
+<text x="180.594" y="112.268" size="1.778" layer="97" rot="R90">dn</text>
+<text x="183.388" y="112.268" size="1.778" layer="97" rot="R90">en</text>
+<text x="186.436" y="112.268" size="1.778" layer="97" rot="R90">st</text>
 </plain>
 <instances>
 <instance part="R8" gate="G$1" x="76.2" y="91.44" rot="R270">
@@ -8712,13 +8716,13 @@ Source: Comchip CGRM4001-G.pdf</description>
 <attribute name="MPN" x="149.86" y="10.16" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="U$1" gate="G$1" x="-35.56" y="53.34" rot="R90"/>
-<instance part="U$2" gate="G$1" x="68.58" y="63.5"/>
+<instance part="HEATER_MOSFET" gate="G$1" x="68.58" y="63.5"/>
 <instance part="R7" gate="G$1" x="63.5" y="58.42"/>
 <instance part="R9" gate="G$1" x="93.98" y="68.58"/>
 <instance part="R10" gate="G$1" x="124.46" y="55.88"/>
 <instance part="DS18B20" gate="G$1" x="154.94" y="30.48" rot="R270"/>
 <instance part="BUTTONS" gate="G$1" x="180.34" y="109.22" rot="R270"/>
-<instance part="U$3" gate="G$1" x="99.06" y="76.2"/>
+<instance part="BUZZER_MOSFET" gate="G$1" x="99.06" y="76.2"/>
 <instance part="HEATER_LED" gate="G$1" x="73.66" y="109.22" rot="R270"/>
 <instance part="PUMP_LED" gate="G$1" x="134.62" y="109.22" rot="R270"/>
 <instance part="HEATER" gate="G$1" x="60.96" y="109.22" rot="R270"/>
@@ -8729,7 +8733,7 @@ Source: Comchip CGRM4001-G.pdf</description>
 <instance part="C4" gate="G$1" x="-35.56" y="116.84"/>
 <instance part="IC2" gate="G$1" x="-22.86" y="121.92"/>
 <instance part="C1" gate="G$1" x="-10.16" y="116.84"/>
-<instance part="U$4" gate="G$1" x="129.54" y="63.5"/>
+<instance part="PUMP_MOSFET" gate="G$1" x="129.54" y="63.5"/>
 </instances>
 <busses>
 </busses>
@@ -8856,14 +8860,14 @@ Source: Comchip CGRM4001-G.pdf</description>
 <junction x="101.6" y="71.12"/>
 <pinref part="R9" gate="G$1" pin="2"/>
 <wire x1="99.06" y1="68.58" x2="101.6" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="U$3" gate="G$1" pin="E"/>
+<pinref part="BUZZER_MOSFET" gate="G$1" pin="E"/>
 <wire x1="101.6" y1="71.12" x2="101.6" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND6" gate="1" pin="GND"/>
 <pinref part="R10" gate="G$1" pin="2"/>
 <wire x1="129.54" y1="55.88" x2="132.08" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="U$4" gate="G$1" pin="S"/>
+<pinref part="PUMP_MOSFET" gate="G$1" pin="S"/>
 <junction x="132.08" y="58.42"/>
 <wire x1="132.08" y1="58.42" x2="132.08" y2="55.88" width="0.1524" layer="91"/>
 </segment>
@@ -8935,7 +8939,7 @@ Source: Comchip CGRM4001-G.pdf</description>
 <junction x="71.12" y="58.42"/>
 <pinref part="R7" gate="G$1" pin="2"/>
 <wire x1="68.58" y1="58.42" x2="71.12" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="E"/>
+<pinref part="HEATER_MOSFET" gate="G$1" pin="E"/>
 </segment>
 <segment>
 <wire x1="-10.16" y1="104.14" x2="-10.16" y2="111.76" width="0.1524" layer="91"/>
@@ -9092,7 +9096,7 @@ Source: Comchip CGRM4001-G.pdf</description>
 <wire x1="119.38" y1="60.96" x2="111.76" y2="60.96" width="0.1524" layer="91"/>
 <pinref part="R10" gate="G$1" pin="1"/>
 <wire x1="119.38" y1="60.96" x2="119.38" y2="55.88" width="0.1524" layer="91"/>
-<pinref part="U$4" gate="G$1" pin="G"/>
+<pinref part="PUMP_MOSFET" gate="G$1" pin="G"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="D8"/>
@@ -9123,7 +9127,7 @@ Source: Comchip CGRM4001-G.pdf</description>
 <junction x="88.9" y="68.58"/>
 <wire x1="88.9" y1="68.58" x2="88.9" y2="76.2" width="0.1524" layer="91"/>
 <wire x1="88.9" y1="76.2" x2="96.52" y2="76.2" width="0.1524" layer="91"/>
-<pinref part="U$3" gate="G$1" pin="B"/>
+<pinref part="BUZZER_MOSFET" gate="G$1" pin="B"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="D9"/>
@@ -9148,7 +9152,7 @@ Source: Comchip CGRM4001-G.pdf</description>
 <junction x="71.12" y="96.52"/>
 <pinref part="D1" gate="G$1" pin="A"/>
 <wire x1="76.2" y1="71.12" x2="76.2" y2="73.66" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="C"/>
+<pinref part="HEATER_MOSFET" gate="G$1" pin="C"/>
 <junction x="71.12" y="68.58"/>
 <pinref part="HEATER_LED" gate="G$1" pin="1"/>
 <pinref part="HEATER" gate="G$1" pin="2"/>
@@ -9164,7 +9168,7 @@ Source: Comchip CGRM4001-G.pdf</description>
 <net name="BUZZER_OUT" class="0">
 <segment>
 <wire x1="101.6" y1="101.6" x2="101.6" y2="81.28" width="0.1524" layer="91"/>
-<pinref part="U$3" gate="G$1" pin="C"/>
+<pinref part="BUZZER_MOSFET" gate="G$1" pin="C"/>
 <pinref part="BUZZER" gate="G$1" pin="2"/>
 </segment>
 </net>
@@ -9182,7 +9186,7 @@ Source: Comchip CGRM4001-G.pdf</description>
 <wire x1="137.16" y1="71.12" x2="137.16" y2="73.66" width="0.1524" layer="91"/>
 <pinref part="PUMP_LED" gate="G$1" pin="1"/>
 <pinref part="PUMP" gate="G$1" pin="2"/>
-<pinref part="U$4" gate="G$1" pin="D"/>
+<pinref part="PUMP_MOSFET" gate="G$1" pin="D"/>
 </segment>
 </net>
 <net name="N$8" class="0">
@@ -9208,7 +9212,7 @@ Source: Comchip CGRM4001-G.pdf</description>
 <wire x1="58.42" y1="63.5" x2="66.04" y2="63.5" width="0.1524" layer="91"/>
 <pinref part="R7" gate="G$1" pin="1"/>
 <wire x1="58.42" y1="63.5" x2="58.42" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="B"/>
+<pinref part="HEATER_MOSFET" gate="G$1" pin="B"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="D6"/>
