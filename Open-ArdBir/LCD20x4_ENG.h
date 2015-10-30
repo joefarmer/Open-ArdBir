@@ -594,36 +594,7 @@ void Menu_3_5(){
 }
 
 void Credits(){
-  lcd.clear();
 
-  Intestazione();
-  delay(1500);
-
-  display_lcd(7,2,"Code :",750);
-  display_lcd(5,3,"S.Mathison",2000);
-  display_lcd(5,3," M.Wilson ",1750);
-  display_lcd(6,3," M.Nevi ",1750);
-
-  Clear_2_3();
-
-  display_lcd(3, 2, "PCB  &  Tests:", 750);
-  display_lcd(3, 3, "  Daniel Xan  ", 999);
-  display_lcd(3, 3, "Savio Thechnic", 999);
-  display_lcd(3, 3, "   A. Tidei   ", 999);
-  display_lcd(4, 3, "D. Arzarello", 999);
-  display_lcd(4, 3, "L. DiMichele", 999);
-
-  Clear_2_3();
-
-  display_lcd(3,2,"Translations:",750);
-  display_lcd(4,3,"A. Moiseyev",999);//Russo
-  display_lcd(4,3,"A. Mondejar",999);//Spagnolo
-  display_lcd(4,3,"C.M. Macedo",999);//Portoghese 20x4
-  display_lcd(3,3,"F.A. Oliveira",999);//Portugues 16x2
-  display_lcd(3,3,"G.  Santaella",999);//Portuguese 20x4 (new)
-  display_lcd(3,3,"  E. Eduard  ",999);//Norvegese  20x4 (new)
-
-  Clear_2_3();
 }
 
 
