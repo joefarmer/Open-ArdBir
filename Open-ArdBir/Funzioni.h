@@ -1,15 +1,9 @@
 void Buzzer(byte NumBeep, int Period){
   for (byte i = 0; i < NumBeep; i++){
-    #if ToneOnBuzzer == false
-      digitalWrite (Buzz, HIGH);
-      delay (Period);
-      digitalWrite(Buzz, LOW);
-      delay(75);
-    #elif ToneOnBuzzer == true
-      tone(Buzz, 600, Period);
-      delay(Period + 75);
-      noTone(Buzz);
-    #endif
+	  digitalWrite (Buzz, HIGH);
+	  delay (Period);
+	  digitalWrite(Buzz, LOW);
+	  delay(75);
   }
 }
 
@@ -32,71 +26,25 @@ void FormatNumeri(float Numero, int Offset) {
   LCDSpace(Spazi + Offset);
 }
 
-#if TestMemoria == true
-int freeRam() {
-  extern int __heap_start, *__brkval;
-  int v;
-  return (int) &v - (__brkval == 0 ? (int) &__heap_start : (int) __brkval);
-}
-#endif
-
-
 byte r_set(int addr){
-  #if ReadWrite   == true  
-    Serial.print (F("R-> "));
-    Serial.print (addr);
-    Serial.print (F(" byte: "));
-    Serial.println (EEPROM.read(addr)); 
-  #endif
-
   return EEPROM.read(addr);
 }
 
 void s_set (int addr, byte data){
-  #if ReadWrite   == true
-    Serial.print (F("W-> "));
-    Serial.print (addr);
-    Serial.print (F(" byte: "));
-    Serial.println (data);
-  #endif
-  
   EEPROM.write(addr,data);
-
 }
 
 float r_set_float(int addr){ 
-  #if ReadWrite    == true
-    Serial.print (F("R-> "));
-    Serial.print (addr);
-    Serial.print (F(" float: "));
-    Serial.println (word(EEPROM.read(addr),EEPROM.read(addr+1))); 
-  #endif
-  
   return word(EEPROM.read(addr),EEPROM.read(addr+1));
 }
 
 double r_set_double(int addr){ 
-  #if ReadWrite   == true
-    Serial.print (F("R-> "));
-    Serial.print (addr);
-    Serial.print (F(" double: "));
-    Serial.println (word(EEPROM.read(addr),EEPROM.read(addr+1)));
-  #endif
-  
   return word(EEPROM.read(addr),EEPROM.read(addr+1));
- 
 }
 
 void save_set (int addr, int data){
   EEPROM.write(addr,highByte(data));
   EEPROM.write((addr+1),lowByte(data));
-  
-  #if ReadWrite   == true
-    Serial.print (F("W-> "));
-    Serial.print (addr);
-    Serial.print (F(" Word: "));
-    Serial.println (data); 
-  #endif
 }  
 
 void CountDown(unsigned long Tempo, byte posX, byte posY, byte numH){
